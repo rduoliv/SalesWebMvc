@@ -20,6 +20,7 @@ namespace SalesWebMvc.Services
         }
         public void Insert(Seller obj)
         {
+            obj.Departament = _context.Departament.First();// default para não dar erro de foreing key
             _context.Add(obj);
             _context.SaveChanges();
         }
